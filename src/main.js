@@ -18,15 +18,23 @@ $(document).ready(function() {
         `${response.data[i].practices[0].visit_address.street}` + " " +
         `${response.data[i].practices[0].visit_address.city}` + ", " +
         `${response.data[i].practices[0].visit_address.state}` + " " +
-        `${response.data[i].practices[0].visit_address.zip}` + "<br>" +
+        `${response.data[i].practices[0].visit_address.zip}` + "</div><br>" +
         `${response.data[i].profile.first_name}` + " " +
         `${response.data[i].profile.last_name}` + ", " +
         `${response.data[i].profile.title}` + "</li>" +
+        "<p>Accepting new patients: <span id='yesOrNo'></span></p>" +
         "<li class='card-text'>"+
         `${response.data[i].profile.bio}`
         +"</li>" +
         "</ul></div></li>"
-      );}
+
+      );
+      if (`${response.data[i].practices[0].accepts_new_patients}`) {
+        $('#yesOrNo').text('yes');
+      } else {
+        $('#yesOrNo').text('no');
+      }
+    }
     })
     .fail(function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);

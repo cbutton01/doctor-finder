@@ -2,6 +2,10 @@ body {
   background-color: #7FDBFF;
 }
 
+#ptrue, #pfalse {
+  display: none;
+}
+
 .card {
   width: 75%;
   margin-bottom: 20px;
