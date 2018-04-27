@@ -3,9 +3,9 @@ body {
 }
 
 .card {
-  padding: 5px;
   width: 75%;
   margin-bottom: 20px;
+  box-shadow: 2px 5px 50px #222;
 }
 
 .card-title {
