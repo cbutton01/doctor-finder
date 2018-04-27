@@ -16,4 +16,11 @@
   * The user can input a symptom to narrow down their search.
     * For example using the term "sore throat" will display only the names of physicians that specialize or work with sore throats.
 
-  
+
+### Set up instructions
+
+  * Clone repository from github
+  * run npm install
+  * create a local .env file and insert a variable of exports.apikey equal to your own betterDoctor api key
+  * in the command line use the command npm run start
+  * type in a symptom and press the search button
