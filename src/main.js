@@ -10,10 +10,6 @@ $(document).ready(function() {
     console.log('click');
     let symptom = $('#symptom').val();
     call.apiCall(symptom).then(function(response) {
-      console.log(`${response}`);
-      console.log(`${response.data[0]}`);
-      console.log(`${response.data[0].practices[0]}`);
-      console.log(`${response.data[0].practices[0].name}`);
       $('#output').append(`${response.data[0].practices[0].name}`);
     }).fail(function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
