@@ -7,11 +7,23 @@ import './styles.css';
 $(document).ready(function() {
   let call = new Call();
   $('#findDoc').click(function() {
-    console.log('click');
     let symptom = $('#symptom').val();
     call.apiCall(symptom).then(function(response) {
-      $('#output').append(`${response.data[0].practices[0].name}`);
-    }).fail(function(error) {
+      for (let i = 0; i < `${response.data.length}`; i++){
+      $('#output').append("<li><div class='card'>" +
+       "<div class='card-title'>" +
+       `${response.data[i].practices[0].name}`+"</div>" +
+        "<ul class='card-body text'><li>" +
+       `${response.data[i].profile.first_name}` + " " +
+        `${response.data[i].profile.last_name}` + ", " +
+         `${response.data[i].profile.title}` + "</li>" +
+      "<li>"+
+      `${response.data[i].profile.bio}`
+       +"</li>" +
+      "</ul></div></li>"
+    );}
+    })
+    .fail(function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
     });
   });
