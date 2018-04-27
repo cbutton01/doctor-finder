@@ -5,10 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 $(document).ready(function() {
-  let key = process.env.export.apikey;
-  $('#weatherLocation').click(function() {
-    $.get(`https://api.betterdoctor.com/2016-03-01/doctors?location=37.773%2C-122.413%2C25&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=${key}`).then(function(response) {
-
+  let call = new Call();
+  $('#findDoc').click(function() {
+    call.apiCall().then(function(response) {
+      $('#output').append(`${response.data[0].practices[0].name}`);
     }).fail(function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
     });
