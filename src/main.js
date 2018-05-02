@@ -28,16 +28,16 @@ $(document).ready(function() {
         +"</li>" +
         "</ul></div></li>"
 
-      );
-      if (`${response.data[i].practices[0].accepts_new_patients}`) {
-        $('#yesOrNo').text('yes');
-      } else {
-        $('#yesOrNo').text('no');
+        );
+        if (`${response.data[i].practices[0].accepts_new_patients}`) {
+          $('#yesOrNo').text('yes');
+        } else {
+          $('#yesOrNo').text('no');
+        }
       }
-    }
     })
-    .fail(function(error) {
-      $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
-    });
+      .fail(function(error) {
+        $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
+      });
   });
 });
