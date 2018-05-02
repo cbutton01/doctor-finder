@@ -12,7 +12,7 @@
   * run npm install
   * _IMPORTANT_ you will need your own API key from https://developer.betterdoctor.com/ in order to run this project locally.
   * After getting an API key create a .env file in the top directory of doctor-finder
-  * Inside the .env creat a variable named eports.apiKey and assign it the value of your own API key.
+  * Inside the .env creat a variable named exports.apiKey and assign it the value of your own API key.
   * in the command line use the command npm run start
   * type in a symptom and press the search button
 
