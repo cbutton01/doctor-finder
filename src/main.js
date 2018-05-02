@@ -38,7 +38,7 @@ $(document).ready(function() {
         currentNum++;
       }
     }).fail(function(error) {
-        $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
-      });
+      $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
+    });
   });
 });

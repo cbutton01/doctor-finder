@@ -25,3 +25,9 @@
 
   * The user can input a symptom to narrow down their search.
     * For example using the term "sore throat" will display only the names of physicians that specialize or work with sore throats.
+
+### Known Bugs and issues
+
+  * Accepting new patients field is not being populated correctly.
+  * Preforming a search only appends new items to the list, this is inconvenient for the user, but a solution has not been found.
+  * Errors not being displayed correctly.
