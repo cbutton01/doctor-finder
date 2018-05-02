@@ -7,7 +7,7 @@ import { Call } from './call.js';
 $(document).ready(function() {
   let call = new Call();
   $('#findDoc').click(function() {
-    debugger;
+    let currentNum = 0;
     let symptom = $('#symptom').val();
     call.apiCall(symptom, `${process.env.exports.apiKey}`).then(function(response) {
       for (let i = 0; i < `${response.data.length}`; i++){
@@ -23,18 +23,19 @@ $(document).ready(function() {
         `${response.data[i].profile.first_name}` + " " +
         `${response.data[i].profile.last_name}` + ", " +
         `${response.data[i].profile.title}` + "</li>" +
-        "<p>Accepting new patients: <span id='yesOrNo'></span></p>" +
+        "<p>Accepting new patients: <span id='yesOrNo'" + currentNum + "></span></p>" +
         "<li class='card-text'>"+
         `${response.data[i].profile.bio}`
         +"</li>" +
         "</ul></div></li>"
 
         );
-        if (`${response.data[i].practices[0].accepts_new_patients}`) {
-          $('#yesOrNo').text('yes');
+        if (`${response.data[i].practices[0].accepts_new_patients}` === true) {
+          $('#yesOrNo' + currentNum).append('yes');
         } else {
-          $('#yesOrNo').text('no');
+          $('#yesOrNo' + currentNum).append('no');
         }
+        currentNum++;
       }
     }).fail(function(error) {
         $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);

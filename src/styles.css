@@ -6,6 +6,17 @@ body {
   display: none;
 }
 
+.jumbotron {
+  margin-top: 25px;
+  background-color: rgb(133, 158, 198, .4);
+  text-align: center;
+}
+
+.inputField {
+  margin-left: 10%;
+  margin-bottom: 5%;
+}
+
 .card {
   width: 500px;
   margin-bottom: 20px;
