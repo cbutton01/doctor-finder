@@ -1,14 +1,15 @@
-import { Call } from './call.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
+import { Call } from './call.js';
 
 $(document).ready(function() {
   let call = new Call();
   $('#findDoc').click(function() {
+    debugger;
     let symptom = $('#symptom').val();
-    call.apiCall(symptom).then(function(response) {
+    call.apiCall(symptom, `${process.env.exports.apiKey}`).then(function(response) {
       for (let i = 0; i < `${response.data.length}`; i++){
         $('#output').append("<li><div class='card'>" +
         "<div class='card-header'>" +
@@ -35,8 +36,7 @@ $(document).ready(function() {
           $('#yesOrNo').text('no');
         }
       }
-    })
-      .fail(function(error) {
+    }).fail(function(error) {
         $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
       });
   });

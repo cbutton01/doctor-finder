@@ -13,6 +13,7 @@
         "semi": 1,
         "indent": ["warn", 2],
         "no-unused-vars": 'warn',
-        "no-console": 'warn'
+        "no-console": 'warn',
+        "no-debugger": 'warn'
     }
 }

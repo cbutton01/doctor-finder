@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>template</title>
-  </head>
-  <body>
-    <div class="container-fluid">
-      </div>
+<head>
+  <meta charset="utf-8">
+  <title>template</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1>Find A Doctor Today!</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
         <input id="symptom" type="text" placeholder="Type Symptoms Here">
         <button id="findDoc" class="btn btn-primary" type="button" name="button">Search</button>
         <ul id="output">
-        </ul>
+      </div>
+      <div class="col-md-6">
+        <div class="card card-body card-text">
+          <p>Hello there!  Welcome to my doctor finder app, which I made for an Epicodus independent code review.  To use this webpage (which accesses the better doctor API) you will need an API key from <a href="https://developer.betterdoctor.com/">https://developer.betterdoctor.com/</a>, further instructions on how to set up this project can be found in the README.md file. <br>
+            Once you have all that ready to go you may enter a symptom in the input field to the left, and you will be given a list of Doctors.  For example entering 'Cancer' into the input field will show a list of Oncologists and other specialtists.  The API call can be slow at times, so please be patient as it loads.<br>
+            Enjoy!</p>
+        </div>
+      </div>
     </div>
-  </body>
+    </ul>
+  </div>
+</body>
 </html>
